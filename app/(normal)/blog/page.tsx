@@ -1,7 +1,12 @@
 import { documents } from "@/app/source";
 import { Card } from "./_card";
 import React from "react";
+import { createMetadata } from "@/lib/metadata";
 
+export const metadata = createMetadata({
+  title: "Blog",
+  description: "My precious thoughts and inspirations.",
+});
 function Page() {
   return (
     <main>

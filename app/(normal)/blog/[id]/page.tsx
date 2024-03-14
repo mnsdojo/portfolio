@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { Date } from "./page.client";
 import React from "react";
 import Link from "next/link";
+import { createMetadata } from "@/lib/metadata";
 
 function page({ params }: { params: { id: string } }) {
   const document = documents.find((d) => d.id === params.id);
@@ -37,8 +38,8 @@ function page({ params }: { params: { id: string } }) {
       </p>
       <footer className="flex flex-row items-end justify-between bg-neutral-900 border border-neutral-800 rounded-xl p-4 mt-4">
         <div>
-          <p className="text-sm font-medium text">Fuma Nama</p>
-          <p className="text-sm text-neutral-400">An open-sourcerer.</p>
+          <p className="text-sm font-medium text">Manish Kumar</p>
+          <p className="text-sm text-neutral-400">A Human Developer.</p>
         </div>
         <Link
           href="/blog"
@@ -56,4 +57,19 @@ export function generateStaticParams() {
   return documents.map((d) => ({
     id: d.id,
   }));
+}
+
+export function generateMetadata({ params }: { params: { id: string } }) {
+  const document = documents.find((d) => d.id === params.id);
+  if (!document) notFound();
+
+  return createMetadata({
+    title: document.info.title,
+    description: document.info.description,
+    openGraph: {
+      type: "article",
+      authors: "Fuma Nama",
+      modifiedTime: document.info.date.toISOString(),
+    },
+  });
 }
