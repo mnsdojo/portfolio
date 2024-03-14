@@ -3,11 +3,11 @@ import type { ReactNode } from "react";
 export default function Home() {
   return (
     <article>
-      <h1 className="text-xl font-semibold mb-4">Fuma Nama</h1>
+      <h1 className="text-xl font-semibold mb-4">Manish Kumar</h1>
 
       <p className="text-sm text-neutral-400">
-        Hello there, I am an open sourcerer from India. Currently involved
-        in software development & web design, passionated on a wide spectrum of
+        Hello there, I am an open sourcerer from India. Currently involved in
+        software development & web design, passionated on a wide spectrum of
         topics.
         <br />
         <br />
