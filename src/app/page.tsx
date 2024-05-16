@@ -1,3 +1,4 @@
+import Links from "@/components/links";
 import React from "react";
 
 function Page() {
@@ -8,6 +9,7 @@ function Page() {
       <div className="mt-8 text-base sm:text-lg">
         <p>Hi, my name is John Doe, software engineer based in NYC.</p>
         <br />
+        <Links />
       </div>
     </div>
   );

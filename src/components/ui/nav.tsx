@@ -14,8 +14,12 @@ const navItems = [
     name: "About",
   },
   {
-    path: "/contact",
-    name: "Contact",
+    path: "/projects",
+    name: "Projects",
+  },
+  {
+    path: "/blog",
+    name: "Blog",
   },
 ];
 
@@ -24,7 +28,7 @@ function NavLinks() {
   const [hoveredPath, setHoveredPath] = useState(pathname);
 
   return (
-    <div className="flex space-x-4">
+    <div className="flex space-x-2">
       {navItems.map((item) => {
         const isActive = item.path === pathname;
         return (
@@ -66,7 +70,7 @@ function NavLinks() {
 function Navbar() {
   return (
     <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 ">
-      <motion.div className="border border-stone-800/90 p-4 rounded-lg p mb-12 z-[100] bg-stone-900/80 backdrop-blur-md">
+      <motion.div className="border border-stone-800/90 p-[0.4rem] rounded-lg p mb-12 z-[100] bg-stone-900/80 backdrop-blur-md">
         <NavLinks />
       </motion.div>
     </div>

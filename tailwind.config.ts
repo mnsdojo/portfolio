@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-
+import tailwindAnimate from "tailwindcss-animate";
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -7,6 +7,10 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontWeight: {
+      base: "500",
+      heading: "700",
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -15,6 +19,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+
+  plugins: [tailwindAnimate],
 };
 export default config;
