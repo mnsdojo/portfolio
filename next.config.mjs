@@ -1,4 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+import { createMdxtsPlugin } from "mdxts/next";
 
-export default nextConfig;
+const withMdxts = createMdxtsPlugin({
+  theme: "nord",
+  gitSource: "https://github.com/souporserious/mdxts",
+});
+
+export default withMdxts({
+  // Next.js config options here...
+});
